@@ -89,7 +89,7 @@ func newErrUnsupportedPtrType(rf reflect.Value, t reflect.Type, structField refl
 //   }
 //
 //
-// Visit https://github.com/google/jsonapi#create for more info.
+// Visit https://github.com/dentech-floss/jsonapi#create for more info.
 //
 // model interface{} should be a pointer to a struct.
 func UnmarshalPayload(in io.Reader, model interface{}) error {

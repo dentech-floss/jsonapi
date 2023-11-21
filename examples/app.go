@@ -5,12 +5,11 @@ import (
 	"encoding/json"
 	"fmt"
 	"io"
-	"io/ioutil"
 	"net/http"
 	"net/http/httptest"
 	"time"
 
-	"github.com/google/jsonapi"
+	"github.com/dentech-floss/jsonapi"
 )
 
 func main() {
@@ -51,7 +50,7 @@ func exerciseHandler() {
 	http.DefaultServeMux.ServeHTTP(w, req)
 	fmt.Println("============ stop list ===========")
 
-	jsonReply, _ := ioutil.ReadAll(w.Body)
+	jsonReply, _ := io.ReadAll(w.Body)
 
 	fmt.Println("============ jsonapi response from list ===========")
 	fmt.Println(string(jsonReply))
@@ -68,7 +67,7 @@ func exerciseHandler() {
 	http.DefaultServeMux.ServeHTTP(w, req)
 	fmt.Println("============ stop show ===========")
 
-	jsonReply, _ = ioutil.ReadAll(w.Body)
+	jsonReply, _ = io.ReadAll(w.Body)
 
 	fmt.Println("============ jsonapi response from show ===========")
 	fmt.Println(string(jsonReply))
